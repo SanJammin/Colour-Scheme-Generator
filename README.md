@@ -8,3 +8,5 @@ Requirements:
     Stretch goal: click hex values/colour to copy to clipboard
 
 Figma File: https://www.figma.com/design/QfIWvH6BNVMqPHyQT0yHQ3/Color-Scheme-Generator--Copy-?node-id=0-1&p=f&t=IiCyPijkcE014QS8-0
+
+The API Docs: https://www.thecolorapi.com/docs
