@@ -12,6 +12,48 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <header>
+        <form>
+            <input type="color" id="colour-picker" aria-label="Select base colour for scheme">
+            <select id="scheme-selection" aria-label="Select colour scheme type">
+                <option value="monochrome">Monochrome</option>
+                <option value="monochrome-dark">Monochrome-dark</option>
+                <option value="monochrome-light">Monochrome-light</option>
+                <option value="analogic">Analogic</option>
+                <option value="complement">Complement</option>
+                <option value="analogic-complement">Analogic-complement</option>
+                <option value="triad">Triad</option>
+                <option value="quad">Quad</option>
+            </select>
+            <button id="get-colour-scheme" aria-label="Generate new colour scheme">Get colour scheme</button>
+        </form>
+        <button id="light-and-dark-mode" aria-label="Switch between light and dark mode">Dark Mode</button>
+    </header>
+
+    <main>
+        <div class="colour-scheme">
+            <div class="colour-and-code">
+                <div class="colour" id="original-colour"></div>
+                <p class="code" id="code"></p>
+            </div>
+            <div class="colour-and-code">
+                <div class="colour" id="colour-two"></div>
+                <p class="code" id="code"></p>
+            </div>
+            <div class="colour-and-code">
+                <div class="colour" id="colour-three"></div>
+                <p class="code" id="code"></p>
+            </div>
+            <div class="colour-and-code">
+                <div class="colour" id="colour-four"></div>
+                <p class="code" id="code"></p>
+            </div>
+            <div class="colour-and-code">
+                <div class="colour" id="colour-five"></div>
+                <p class="code" id="code"></p>
+            </div>
+        </div>
+    </main>
     
     <script src="index.js"></script>
 </body>
