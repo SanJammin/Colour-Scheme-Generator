@@ -14,6 +14,15 @@ const colourFive = document.getElementById("colour-five");
 const codeFive = document.getElementById("code-five");
 const colourDivs = [originalColour, colourTwo, colourThree, colourFour, colourFive];
 const codeDivs = [originalCode,codeTwo, codeThree, codeFour, codeFive];
+const colourAndCode = document.querySelectorAll(".colour-and-code");
+
+colourAndCode.forEach(copy => {
+    copy.addEventListener("click", () => {
+        const hex = copy.querySelector(".code").textContent;
+        navigator.clipboard.writeText(hex);
+        alert(`Copied: ${hex}`);
+    });
+});
 
 getColourScheme.addEventListener("click", (e) => {
     e.preventDefault();
