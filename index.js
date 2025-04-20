@@ -10,10 +10,24 @@ const colourThree = document.getElementById("colour-three");
 const codeThree = document.getElementById("code-three");
 const colourFour = document.getElementById("colour-four");
 const codeFour = document.getElementById("code-four");
-const colourFive = document.getElementById("colour-Five");
-const codeFive = document.getElementById("code-Five");
+const colourFive = document.getElementById("colour-five");
+const codeFive = document.getElementById("code-five");
+const colourDivs = [originalColour, colourTwo, colourThree, colourFour, colourFive];
+const codeDivs = [originalCode,codeTwo, codeThree, codeFour, codeFive];
 
-colourPicker.addEventListener("input", () => {
-    originalColour.style.backgroundColor = colourPicker.value;
-    originalCode.textContent = colourPicker.value;
+getColourScheme.addEventListener("click", (e) => {
+    e.preventDefault();
+    const hex = colourPicker.value.slice(1);
+    const mode = schemeSelection.value;
+    const url = `https://www.thecolorapi.com/scheme?hex=${hex}&mode=${mode}&count=4`;
+
+    fetch(url)
+        .then(res => res.json())
+        .then(colour => {            
+            for (let i = 0; i < colourDivs.length; i++) {
+                const hexValue = i === 0 ? colourPicker.value.toUpperCase() : colour.colors [i - 1].hex.value;
+                colourDivs[i].style.backgroundColor = hexValue;
+                codeDivs[i].textContent = hexValue;
+            };
+        });
 });
