@@ -31,3 +31,10 @@ getColourScheme.addEventListener("click", (e) => {
             };
         });
 });
+
+lightAndDarkMode.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    lightAndDarkMode.textContent =
+        lightAndDarkMode.textContent === "Dark Mode" ? "Light Mode" : "Dark Mode";
+});

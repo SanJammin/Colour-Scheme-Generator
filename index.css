@@ -1,3 +1,15 @@
+:root {
+    --background: white;
+    --button-background: white;
+    --text: #2b283a;
+}
+
+body.dark {
+    --background: #1f2937;
+    --button-background: #3d4b60;
+    --text: white;
+}
+
 /* ====== GLOBAL RESET & BASE STYLES ====== */
 * {
     box-sizing: border-box;
@@ -9,7 +21,8 @@ html, body {
     padding: 0;
     height: 100%;
     font-family: "Inter", sans-serif;
-    background-color: beige;
+    background-color: var(--background);
+    color: var(--text);
 }
 
 /* ====== APP CONTAINER ====== */
@@ -32,7 +45,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: white;
+    background-color: var(--background);
     padding: 0.75rem 1rem;
     width: 550px;
     gap: 0.5em;
@@ -52,6 +65,7 @@ button {
     height: 42px;
     font-size: 1rem;
     font-family: inherit;
+    color: var(--text);
 }
 
 /* Colour Picker Input */
@@ -71,7 +85,7 @@ select {
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-color: white;
+    background-color: var(--background);
     background-image: url('./images/Icon.png');
     background-repeat: no-repeat;
     background-position: right 1rem center;
@@ -93,7 +107,7 @@ select:focus {
 /* Button Styling (Shared) */
 button {
     border: 1px solid #d1d5db;
-    background-color: white;
+    background-color: var(--button-background);
     padding: 0 0.75rem;
     border-radius: 4px;
     cursor: pointer;
@@ -129,7 +143,7 @@ main {
     width: 110px;
     height: 46px;
     text-align: center;
-    background-color: white;
+    background-color: var(--background);
     display: flex;
     justify-content: center;
     align-items: center;
