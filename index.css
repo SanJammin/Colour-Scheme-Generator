@@ -1,44 +1,70 @@
-body {
+/* ====== GLOBAL RESET & BASE STYLES ====== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html, body {
     margin: 0;
     padding: 0;
+    height: 100%;
     font-family: "Inter", sans-serif;
-    width: 550px;
-    height: 550px;
-    box-sizing: border-box;
     background-color: beige;
 }
 
-.app {
+/* ====== APP CONTAINER ====== */
+body {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-header {
-    height: 90px;
+.app {
+    width: 100%;
+    max-width: 550px;
+    padding: 1rem;
     display: flex;
-    align-items: center;
-    background-color: white;
+    flex-direction: column;
 }
 
+/* ====== HEADER AREA ====== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0.75rem 1rem;
+    width: 550px;
+    gap: 0.5em;
+    margin: 0;
+}
+
+/* ==== FORM INPUTS & BUTTON GROUPING ==== */
 form {
     display: flex;
     align-items: center;
-    gap: 0.5em;
-    padding: 0 0.5em;
+    gap: 0.5rem;
 }
 
+input,
+select,
+button {
+    height: 42px;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+/* Colour Picker Input */
 #colour-picker {
     border: none;
-    height: 42px;
     width: 61px;
+    cursor: pointer;
 }
 
+/* Dropdown Styling */
 .select-wrapper {
     position: relative;
     display: inline-block;
-    width: max-content;
 }
 
 select {
@@ -50,34 +76,47 @@ select {
     background-repeat: no-repeat;
     background-position: right 1rem center;
     background-size: 1rem;
-    padding: 0.75rem 2.5rem 0.75rem 1rem;
+    padding: 0 2.5rem 0 1rem;
     border: 1px solid #d1d5db;
     border-radius: 6px;
-    font-family: inherit;
-    font-size: 1rem;
     cursor: pointer;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     outline: none;
 }
 
 select:focus {
-    outline: none;
     border: 1px solid #d1d5db;
     box-shadow: none;
+    outline: none;
 }
 
+/* Button Styling (Shared) */
 button {
     border: 1px solid #d1d5db;
-    cursor: pointer;
-    border-radius: 4px;
-    font-family: inherit;
-    height: 42px;
     background-color: white;
-    padding: 0 0.5rem;
+    padding: 0 0.75rem;
+    border-radius: 4px;
+    cursor: pointer;
 }
 
+main {
+    margin: 0;
+    padding: 0;
+}
+
+/* ====== COLOUR SCHEME DISPLAY ====== */
 .colour-scheme {
     display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+
+/* Individual Colour Block + Code */
+.colour-and-code {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
 }
 
 .colour {
@@ -85,13 +124,20 @@ button {
     height: 414px;
 }
 
+/* Hex Code Styling */
 .code {
     width: 110px;
     height: 46px;
     text-align: center;
     background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
+/* ====== DEFAULT COLOURS (OVERRIDDEN BY JS) ====== */
 #original-colour {
     background-color: #F55A5A;
 }
